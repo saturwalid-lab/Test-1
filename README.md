@@ -1,4 +1,4 @@
-# Nordlicht Energietechnik – Website „Energie, die mitdenkt.“
+# Nordlicht Energietechnik – Website „Das ist ein Test-Website von Satur“
 
 Statische One-Page-Website für Photovoltaik und Batteriespeicher (HTML, CSS, JavaScript – ohne Abhängigkeiten).
 
