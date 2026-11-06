@@ -1,0 +1,701 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Nordlicht Energietechnik – Energie, die mitdenkt.</title>
+  <meta name="description" content="Photovoltaik und Batteriespeicher für Gewerbe und Privat aus Hamburg. Über 2.300 Anlagen in Norddeutschland – Planung, Montage und Wartung aus einer Hand.">
+  <meta name="theme-color" content="#000000">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:title" content="Nordlicht Energietechnik – Energie, die mitdenkt.">
+  <meta property="og:description" content="Solaranlagen und Batteriespeicher für Zuhause und Gewerbe. Seit 2014 aus Hamburg.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="assets/js/main.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Nordlicht Energietechnik GmbH",
+    "slogan": "Energie, die mitdenkt.",
+    "description": "Photovoltaik- und Energiespeicherlösungen für Gewerbe und Privat.",
+    "foundingDate": "2014",
+    "numberOfEmployees": 48,
+    "founder": { "@type": "Person", "name": "Jonas Behrend" },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Musterstraße 14",
+      "postalCode": "20457",
+      "addressLocality": "Hamburg",
+      "addressCountry": "DE"
+    },
+    "telephone": "+49 30 23125410",
+    "email": "kontakt@nordlicht-energie.example",
+    "openingHours": "Mo-Fr 08:00-17:00",
+    "areaServed": "Norddeutschland"
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+  <!-- ============ Globale Navigation ============ -->
+  <header class="gnav" id="gnav">
+    <nav class="gnav__inner" aria-label="Hauptnavigation">
+      <a class="brand" href="#top" aria-label="Nordlicht Energietechnik – zum Seitenanfang">
+        <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true">
+          <defs>
+            <linearGradient id="bm-g" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#3cf2b0"/><stop offset=".5" stop-color="#33c7ff"/><stop offset="1" stop-color="#8f7bff"/>
+            </linearGradient>
+          </defs>
+          <path d="M4.5 21a11.5 11.5 0 0 1 23 0" fill="none" stroke="url(#bm-g)" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="16" cy="21" r="5" fill="url(#bm-g)"/>
+          <path d="M3 26.5h26" stroke="url(#bm-g)" stroke-width="2.4" stroke-linecap="round"/>
+        </svg>
+        <span class="brand__name">Nordlicht</span>
+      </a>
+      <button class="gnav__toggle" type="button" aria-expanded="false" aria-controls="gnav-menu" aria-label="Menü öffnen">
+        <span></span><span></span>
+      </button>
+      <ul class="gnav__menu" id="gnav-menu">
+        <li><a href="#loesungen">Lösungen</a></li>
+        <li><a href="#tagesverlauf">Technik</a></li>
+        <li><a href="#rechner">Rechner</a></li>
+        <li><a href="#ablauf">Ablauf</a></li>
+        <li><a href="#ueber-uns">Über uns</a></li>
+        <li><a href="#stimmen">Kundenstimmen</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ============ Lokale Navigation (sticky) ============ -->
+  <div class="lnav" id="lnav">
+    <div class="lnav__inner">
+      <a class="lnav__title" href="#top">Nordlicht Energietechnik</a>
+      <div class="lnav__right">
+        <ul class="lnav__links">
+          <li><a href="#zahlen">Überblick</a></li>
+          <li><a href="#tagesverlauf">Technik</a></li>
+          <li><a href="#rechner">Rechner</a></li>
+          <li><a href="#ueber-uns">Über uns</a></li>
+        </ul>
+        <a class="btn btn--sm" href="#kontakt">Beratung anfragen</a>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <!-- ============ Hero (Scroll-Szene) ============ -->
+    <section class="hero" id="top" data-hero aria-label="Einleitung">
+      <div class="hero__sticky">
+        <canvas class="hero__aurora" id="aurora" aria-hidden="true"></canvas>
+        <div class="hero__vignette" aria-hidden="true"></div>
+
+        <div class="hero__content">
+          <p class="hero__eyebrow">Photovoltaik &amp; Energiespeicher · seit 2014 aus Hamburg</p>
+          <h1 class="hero__title"><span class="grad-text">Energie,</span> die&nbsp;mitdenkt.</h1>
+          <p class="hero__lead">Solaranlagen und Batteriespeicher für Zuhause und Gewerbe – geplant, gebaut und gewartet von einem Team aus dem Norden.</p>
+          <div class="hero__cta">
+            <a class="btn" href="#kontakt">Kostenlose Beratung</a>
+            <a class="link-arrow" href="#rechner">Ersparnis berechnen</a>
+          </div>
+        </div>
+
+        <div class="hero__visual" aria-hidden="true">
+          <div class="hero__glow"></div>
+          <div class="panel">
+            <div class="panel__cells"></div>
+            <div class="panel__sheen"></div>
+          </div>
+        </div>
+
+        <p class="hero__after">Strom vom eigenen Dach.<br><span class="grad-text">Einfach und bezahlbar.</span></p>
+
+        <a class="scroll-cue" href="#intro" aria-label="Weiter scrollen">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============ Intro (Wort-für-Wort-Highlight) ============ -->
+    <section class="intro section" id="intro">
+      <div class="container">
+        <p class="words" data-words>Nordlicht plant, baut und wartet Solaranlagen und Batteriespeicher. Seit 2014 haben wir über 2.300 Anlagen in Norddeutschland installiert. Unser Ziel: Strom vom eigenen Dach, einfach und bezahlbar.</p>
+      </div>
+    </section>
+
+    <!-- ============ Zahlen / Bento ============ -->
+    <section class="section section--tight" id="zahlen" aria-labelledby="zahlen-title">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <p class="eyebrow">Überblick</p>
+          <h2 class="h2" id="zahlen-title">Zahlen, die für sich sprechen.</h2>
+        </header>
+
+        <div class="bento">
+          <article class="tile tile--wide tile--map" data-reveal>
+            <div class="dotfield" aria-hidden="true"></div>
+            <p class="tile__label">Installierte Anlagen</p>
+            <p class="stat"><span data-count="2300">0</span><span class="grad-text">+</span></p>
+            <p class="tile__text">Auf Einfamilienhäusern, Höfen, Hallen und Bürogebäuden in ganz Norddeutschland.</p>
+          </article>
+
+          <article class="tile tile--ring" data-reveal style="--d:120ms">
+            <svg class="ring" viewBox="0 0 120 120" aria-hidden="true">
+              <defs>
+                <linearGradient id="ring-g" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#3cf2b0"/><stop offset="1" stop-color="#33c7ff"/>
+                </linearGradient>
+              </defs>
+              <circle class="ring__track" cx="60" cy="60" r="52"/>
+              <circle class="ring__bar" cx="60" cy="60" r="52" style="--v:.97"/>
+            </svg>
+            <p class="tile__label">Weiterempfehlung</p>
+            <p class="stat stat--m"><span data-count="97">0</span>&nbsp;%</p>
+            <p class="tile__text">unserer Kundinnen und Kunden empfehlen uns weiter.<sup><a href="#fn-4">4</a></sup></p>
+          </article>
+
+          <article class="tile tile--bars" data-reveal>
+            <div class="bars" aria-hidden="true">
+              <span style="--h:.18"></span><span style="--h:.26"></span><span style="--h:.33"></span><span style="--h:.42"></span><span style="--h:.5"></span><span style="--h:.61"></span><span style="--h:.72"></span><span style="--h:.86"></span><span style="--h:1"></span>
+            </div>
+            <p class="tile__label">Installierte Leistung</p>
+            <p class="stat stat--m"><span data-count="18">0</span>&nbsp;MWp</p>
+            <p class="tile__text">Spitzenleistung aller von uns gebauten Anlagen zusammen.</p>
+          </article>
+
+          <article class="tile tile--shield" data-reveal style="--d:120ms">
+            <svg class="shield" viewBox="0 0 64 64" aria-hidden="true">
+              <path d="M32 5l22 8v16c0 14.5-9.4 25.6-22 30-12.6-4.4-22-15.5-22-30V13z" fill="none" stroke="url(#ring-g)" stroke-width="3" stroke-linejoin="round"/>
+              <path d="M22 32l7 7 13-14" fill="none" stroke="url(#ring-g)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <p class="tile__label">Garantie auf Montage</p>
+            <p class="stat stat--m"><span data-count="10">0</span>&nbsp;Jahre</p>
+            <p class="tile__text">Weil wir sauber arbeiten – und dazu stehen.<sup><a href="#fn-3">3</a></sup></p>
+          </article>
+
+          <article class="tile tile--team" data-reveal style="--d:240ms">
+            <p class="tile__label">Menschen bei Nordlicht</p>
+            <p class="stat stat--m"><span data-count="48">0</span></p>
+            <p class="tile__text">Beratung, Planung, Montage und Service – alles im eigenen Haus in Hamburg.</p>
+            <p class="tile__meta">Gegründet 2014</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Tagesverlauf (Scroll-Scrub) ============ -->
+    <section class="section section--tight day-intro" id="tagesverlauf" aria-labelledby="day-title">
+      <div class="container">
+        <header class="section-head section-head--center" data-reveal>
+          <p class="eyebrow">Technik, die mitdenkt</p>
+          <h2 class="h2" id="day-title">Ein Tag mit <span class="grad-text">Nordlicht.</span></h2>
+          <p class="lead">Scrollen Sie durch einen sonnigen Sommertag und sehen Sie, wie Solaranlage, Speicher und Haus zusammenspielen.<sup><a href="#fn-2">2</a></sup></p>
+        </header>
+      </div>
+    </section>
+
+    <section class="day" data-day aria-label="Simulation eines Tagesverlaufs">
+      <div class="day__sticky">
+        <div class="day__frame">
+          <div class="day__stage">
+            <svg class="day__svg" viewBox="0 0 1000 560" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Haus mit Solaranlage, Batteriespeicher und Stromnetz im Tagesverlauf">
+              <defs>
+                <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" id="sky-top" stop-color="#05060f"/>
+                  <stop offset="1" id="sky-bottom" stop-color="#141a33"/>
+                </linearGradient>
+                <radialGradient id="sun-g">
+                  <stop offset="0" stop-color="#fff7d6"/>
+                  <stop offset=".45" stop-color="#ffd36b"/>
+                  <stop offset="1" stop-color="#ffb347" stop-opacity="0"/>
+                </radialGradient>
+                <linearGradient id="aur-g" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0" stop-color="#3cf2b0" stop-opacity="0"/>
+                  <stop offset=".3" stop-color="#3cf2b0"/>
+                  <stop offset=".7" stop-color="#33c7ff"/>
+                  <stop offset="1" stop-color="#8f7bff" stop-opacity="0"/>
+                </linearGradient>
+                <linearGradient id="cell-g" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#2a5bb0"/>
+                  <stop offset="1" stop-color="#10224a"/>
+                </linearGradient>
+                <linearGradient id="bat-g" x1="0" y1="1" x2="0" y2="0">
+                  <stop offset="0" stop-color="#3cf2b0"/>
+                  <stop offset="1" stop-color="#33c7ff"/>
+                </linearGradient>
+                <filter id="blur-l" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="18"/></filter>
+                <filter id="blur-s" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6"/></filter>
+              </defs>
+
+              <rect width="1000" height="560" fill="url(#sky)"/>
+              <g id="stars" fill="#fff"></g>
+              <g id="aurora-sky" filter="url(#blur-l)" opacity="0">
+                <path d="M-50 150 C 150 60, 320 210, 520 120 S 860 60, 1050 140 L 1050 210 C 860 140, 700 230, 520 190 S 150 140, -50 230 Z" fill="url(#aur-g)" opacity=".75"/>
+                <path d="M-50 90 C 200 40, 380 140, 600 80 S 900 40, 1050 90 L 1050 130 C 880 90, 700 170, 560 130 S 200 90, -50 150 Z" fill="url(#aur-g)" opacity=".45"/>
+              </g>
+
+              <g id="sun">
+                <circle r="70" fill="url(#sun-g)" opacity=".55"/>
+                <circle r="26" fill="#fff3c4"/>
+              </g>
+
+              <!-- Landschaft -->
+              <path d="M0 455 C 180 430, 320 440, 500 450 S 820 430, 1000 445 L1000 560 L0 560 Z" id="hill" fill="#0d1a14"/>
+              <g id="trees" fill="#0a140f">
+                <circle cx="90" cy="410" r="38"/><circle cx="135" cy="425" r="30"/><rect x="104" y="430" width="8" height="35"/>
+                <circle cx="190" cy="430" r="22"/><rect x="187" y="440" width="6" height="25"/>
+              </g>
+              <rect x="0" y="468" width="1000" height="92" id="ground" fill="#08100c"/>
+
+              <!-- Haus -->
+              <g id="house">
+                <rect x="250" y="340" width="280" height="130" fill="#1b2230" id="house-body"/>
+                <polygon points="225,340 300,250 480,250 555,340" fill="#262f40" id="house-roof"/>
+                <g id="panels"></g>
+                <rect x="280" y="372" width="54" height="42" rx="3" class="win"/>
+                <rect x="446" y="372" width="54" height="42" rx="3" class="win"/>
+                <rect x="368" y="398" width="44" height="72" rx="3" fill="#111722"/>
+                <g id="win-glow" opacity="0">
+                  <rect x="280" y="372" width="54" height="42" rx="3" fill="#ffcf7a"/>
+                  <rect x="446" y="372" width="54" height="42" rx="3" fill="#ffcf7a"/>
+                  <rect x="270" y="362" width="74" height="62" fill="#ffcf7a" opacity=".35" filter="url(#blur-s)"/>
+                  <rect x="436" y="362" width="74" height="62" fill="#ffcf7a" opacity=".35" filter="url(#blur-s)"/>
+                </g>
+              </g>
+
+              <!-- Speicher -->
+              <g id="battery">
+                <rect x="596" y="356" width="70" height="114" rx="12" fill="#151b26" stroke="#3a4558" stroke-width="2"/>
+                <rect x="606" y="366" width="50" height="94" rx="6" fill="#0b0f16"/>
+                <rect id="bat-fill" x="606" y="460" width="50" height="0" rx="6" fill="url(#bat-g)"/>
+                <text x="631" y="498" text-anchor="middle" class="svg-label">Speicher</text>
+              </g>
+
+              <!-- Netz -->
+              <g id="grid-pole" stroke="#3a4558" stroke-width="5" stroke-linecap="round" fill="none">
+                <path d="M880 470 V 250"/>
+                <path d="M848 272 H 912"/>
+                <path d="M856 296 H 904"/>
+              </g>
+              <text x="880" y="498" text-anchor="middle" class="svg-label">Netz</text>
+              <path d="M856 274 Q 720 330 556 342" fill="none" stroke="#2c3546" stroke-width="2"/>
+
+              <!-- Energieflüsse -->
+              <path class="flow flow--pv" id="flow-charge" d="M480 288 C 560 288, 631 310, 631 356"/>
+              <path class="flow flow--bat" id="flow-dis" d="M596 420 H 530"/>
+              <path class="flow flow--grid" id="flow-grid" d="M856 274 Q 720 330 556 342"/>
+              <path class="flow flow--feed" id="flow-feed" d="M556 336 Q 720 322 856 268"/>
+            </svg>
+
+            <ol class="day__captions" aria-live="polite">
+              <li class="day__caption" data-from="0" data-to="7.5"><strong>Früh am Morgen.</strong> Der Speicher liefert noch Strom vom Vortag.</li>
+              <li class="day__caption" data-from="7.5" data-to="11"><strong>Die Sonne geht auf.</strong> Die Anlage versorgt das Haus direkt.</li>
+              <li class="day__caption" data-from="11" data-to="16.5"><strong>Mittags.</strong> Der Überschuss lädt den Speicher, der Rest geht ins Netz.</li>
+              <li class="day__caption" data-from="16.5" data-to="21"><strong>Am Abend.</strong> Der Speicher übernimmt, wenn alle zu Hause sind.</li>
+              <li class="day__caption" data-from="21" data-to="25"><strong>Nachts.</strong> Strom vom eigenen Dach – auch im Dunkeln.</li>
+            </ol>
+          </div>
+
+          <div class="day__hud">
+            <p class="day__clock"><span id="day-time">05:00</span><small>Uhr</small></p>
+            <dl class="day__metrics">
+              <div><dt><i class="dot dot--pv"></i>Solar</dt><dd><span data-m="pv">0,0</span> kW</dd></div>
+              <div><dt><i class="dot dot--load"></i>Verbrauch</dt><dd><span data-m="load">0,0</span> kW</dd></div>
+              <div><dt><i class="dot dot--bat"></i>Speicher</dt><dd><span data-m="soc">0</span> %</dd></div>
+              <div><dt><i class="dot dot--grid"></i>Netzbezug</dt><dd><span data-m="grid">0,0</span> kW</dd></div>
+            </dl>
+            <div class="day__bar" aria-hidden="true"><span class="day__bar-fill"></span>
+              <span class="day__ticks"><i>06</i><i>12</i><i>18</i><i>24</i></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Vergleich (Vorher/Nachher-Slider) ============ -->
+    <section class="section" id="vergleich" aria-labelledby="compare-title">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <p class="eyebrow">Mit Speicher</p>
+          <h2 class="h2" id="compare-title">Weniger Netz.<br>Mehr <span class="grad-text">eigener Strom.</span></h2>
+          <p class="lead">Ziehen Sie den Regler und vergleichen Sie denselben Tag – einmal ohne, einmal mit Batteriespeicher.<sup><a href="#fn-2">2</a></sup></p>
+        </header>
+
+        <div class="compare" data-compare data-reveal>
+          <div class="compare__layer compare__layer--base">
+            <svg class="compare__chart" id="chart-without" viewBox="0 0 1000 480" aria-hidden="true"></svg>
+            <p class="compare__tag compare__tag--left">Ohne Speicher<span id="aut-without">–</span></p>
+          </div>
+          <div class="compare__layer compare__layer--top">
+            <svg class="compare__chart" id="chart-with" viewBox="0 0 1000 480" aria-hidden="true"></svg>
+            <p class="compare__tag compare__tag--right">Mit Speicher<span id="aut-with">–</span></p>
+          </div>
+          <div class="compare__handle" role="slider" tabindex="0" aria-label="Vergleichsregler: ohne Speicher gegenüber mit Speicher" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-valuetext="50 Prozent">
+            <span class="compare__knob">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </div>
+        </div>
+        <ul class="legend" data-reveal>
+          <li><i class="dot dot--pv"></i>Solarstrom direkt genutzt</li>
+          <li><i class="dot dot--bat"></i>aus dem Speicher</li>
+          <li><i class="dot dot--grid"></i>aus dem Netz</li>
+          <li><i class="dot dot--line"></i>Solarertrag</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ Lösungen (Tabs + Galerie) ============ -->
+    <section class="section section--light" id="loesungen" aria-labelledby="sol-title">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <p class="eyebrow">Lösungen</p>
+          <h2 class="h2" id="sol-title">Für Ihr Dach.<br>Und Ihre Halle.</h2>
+        </header>
+
+        <div class="tabs" data-tabs data-reveal>
+          <div class="tabs__list" role="tablist" aria-label="Zielgruppe">
+            <button class="tabs__tab" role="tab" id="tab-privat" aria-controls="panel-privat" aria-selected="true">Privat</button>
+            <button class="tabs__tab" role="tab" id="tab-gewerbe" aria-controls="panel-gewerbe" aria-selected="false" tabindex="-1">Gewerbe</button>
+            <span class="tabs__ink" aria-hidden="true"></span>
+          </div>
+
+          <div class="tabs__panel" role="tabpanel" id="panel-privat" aria-labelledby="tab-privat">
+            <div class="feature-grid">
+              <div class="feature">
+                <h3>Solaranlage fürs Eigenheim</h3>
+                <p>Wir planen Ihre Anlage passend zu Dach, Verbrauch und Budget – vom Reihenhaus bis zum Resthof.</p>
+              </div>
+              <div class="feature">
+                <h3>Speicher für den Abend</h3>
+                <p>Ein Batteriespeicher hebt den Sonnenstrom vom Mittag für die Stunden auf, in denen Sie ihn wirklich brauchen.</p>
+              </div>
+              <div class="feature">
+                <h3>Ein Ansprechpartner</h3>
+                <p>Beratung, Montage, Anmeldung und Wartung: Sie haben einen Kontakt bei uns – von Anfang an.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="tabs__panel" role="tabpanel" id="panel-gewerbe" aria-labelledby="tab-gewerbe" hidden>
+            <div class="feature-grid">
+              <div class="feature">
+                <h3>Große Dachflächen nutzen</h3>
+                <p>Hallen, Werkstätten und Bürogebäude bieten Platz für Strom, der direkt im Betrieb verbraucht wird.</p>
+              </div>
+              <div class="feature">
+                <h3>Verbrauch tagsüber decken</h3>
+                <p>Betriebe arbeiten, wenn die Sonne scheint. Das macht Solarstrom im Gewerbe besonders wirtschaftlich.</p>
+              </div>
+              <div class="feature">
+                <h3>Aus der Praxis</h3>
+                <p>„Unser Stromverbrauch aus dem Netz ist um 70&nbsp;% gesunken.“ <br><span class="muted">– Bäckerei Thomsen, Lübeck</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery" data-gallery data-reveal>
+        <div class="gallery__track" tabindex="0" aria-label="Leistungen – horizontal scrollen">
+          <article class="card card--pv">
+            <div class="card__text">
+              <p class="card__eyebrow">Photovoltaik</p>
+              <h3 class="card__title">Module, die zu Ihrem Dach passen.</h3>
+            </div>
+            <div class="card__art art-pv" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+          </article>
+          <article class="card card--bat">
+            <div class="card__text">
+              <p class="card__eyebrow">Batteriespeicher</p>
+              <h3 class="card__title">Sonne für den Abend.</h3>
+            </div>
+            <div class="card__art art-bat" aria-hidden="true"><span></span></div>
+          </article>
+          <article class="card card--ems">
+            <div class="card__text">
+              <p class="card__eyebrow">Energiemanagement</p>
+              <h3 class="card__title">Ihr Haus weiß, wann der Strom am günstigsten ist.</h3>
+            </div>
+            <div class="card__art art-ems" aria-hidden="true"><span></span><span></span><span></span></div>
+          </article>
+          <article class="card card--mount">
+            <div class="card__text">
+              <p class="card__eyebrow">Montage</p>
+              <h3 class="card__title">Aus einer Hand. Mit 10 Jahren Garantie.</h3>
+            </div>
+            <div class="card__art art-mount" aria-hidden="true"><span></span></div>
+          </article>
+          <article class="card card--service">
+            <div class="card__text">
+              <p class="card__eyebrow">Wartung &amp; Monitoring</p>
+              <h3 class="card__title">Wir bleiben dran. Jahr für Jahr.</h3>
+            </div>
+            <div class="card__art art-service" aria-hidden="true"><span></span></div>
+          </article>
+        </div>
+        <div class="gallery__controls container">
+          <div class="gallery__dots" role="group" aria-label="Galerieposition"></div>
+          <div class="gallery__paddles">
+            <button class="paddle" type="button" data-dir="-1" aria-label="Zurück"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <button class="paddle" type="button" data-dir="1" aria-label="Weiter"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Rechner ============ -->
+    <section class="section" id="rechner" aria-labelledby="calc-title">
+      <div class="container">
+        <header class="section-head section-head--center" data-reveal>
+          <p class="eyebrow">Ersparnisrechner</p>
+          <h2 class="h2" id="calc-title">Was bringt Ihnen <span class="grad-text">Ihr Dach?</span></h2>
+          <p class="lead">Eine erste Einschätzung in Sekunden. Die genaue Planung machen wir gemeinsam.<sup><a href="#fn-1">1</a></sup></p>
+        </header>
+
+        <form class="calc" data-calc data-reveal onsubmit="return false">
+          <div class="calc__inputs">
+            <div class="seg" role="radiogroup" aria-label="Art des Gebäudes">
+              <label><input type="radio" name="kind" value="privat" checked><span>Privat</span></label>
+              <label><input type="radio" name="kind" value="gewerbe"><span>Gewerbe</span></label>
+            </div>
+
+            <div class="field">
+              <div class="field__row"><label for="c-usage">Jahresstromverbrauch</label><output id="o-usage" for="c-usage">4.500 kWh</output></div>
+              <input class="range" type="range" id="c-usage" min="1500" max="60000" step="500" value="4500">
+            </div>
+
+            <div class="field">
+              <div class="field__row"><label for="c-price">Strompreis</label><output id="o-price" for="c-price">32 ct/kWh</output></div>
+              <input class="range" type="range" id="c-price" min="18" max="45" step="1" value="32">
+            </div>
+
+            <label class="switch">
+              <input type="checkbox" id="c-battery" checked>
+              <span class="switch__track" aria-hidden="true"><span class="switch__thumb"></span></span>
+              <span>Mit Batteriespeicher</span>
+            </label>
+            <p class="calc__hint">Unverbindliche Schätzung. Annahmen siehe Fußnote 1 unten auf der Seite.</p>
+          </div>
+
+          <div class="calc__results" aria-live="polite">
+            <div class="result result--big">
+              <p class="result__label">Geschätzte Ersparnis pro Jahr</p>
+              <p class="result__value"><span id="r-saving">0</span>&nbsp;€</p>
+            </div>
+            <div class="result">
+              <p class="result__label">Anlagengröße</p>
+              <p class="result__value result__value--s"><span id="r-kwp">0</span>&nbsp;kWp</p>
+            </div>
+            <div class="result">
+              <p class="result__label">Speicher</p>
+              <p class="result__value result__value--s"><span id="r-bat">–</span></p>
+            </div>
+            <div class="result">
+              <p class="result__label">Unabhängigkeit</p>
+              <p class="result__value result__value--s"><span id="r-aut">0</span>&nbsp;%</p>
+              <div class="meter"><span id="r-aut-bar"></span></div>
+            </div>
+            <div class="result">
+              <p class="result__label">CO₂ vermieden</p>
+              <p class="result__value result__value--s"><span id="r-co2">0</span>&nbsp;t/Jahr</p>
+            </div>
+            <a class="btn btn--block" href="#kontakt" id="calc-cta">Angebot zu diesem Ergebnis anfragen</a>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ============ Ablauf ============ -->
+    <section class="section section--light" id="ablauf" aria-labelledby="steps-title">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <p class="eyebrow">Ablauf</p>
+          <h2 class="h2" id="steps-title">Vom ersten Gespräch<br>zum ersten Sonnenstrom.</h2>
+        </header>
+        <ol class="steps" data-steps>
+          <li class="step" data-reveal>
+            <span class="step__num">01</span>
+            <h3>Beratung</h3>
+            <p>Wir hören zu, schauen uns Ihr Dach und Ihren Verbrauch an und beantworten alle Fragen.</p>
+          </li>
+          <li class="step" data-reveal style="--d:100ms">
+            <span class="step__num">02</span>
+            <h3>Planung &amp; Angebot</h3>
+            <p>Sie erhalten eine Planung mit klaren Zahlen – ohne Kleingedrucktes.</p>
+          </li>
+          <li class="step" data-reveal style="--d:200ms">
+            <span class="step__num">03</span>
+            <h3>Montage</h3>
+            <p>Unsere Montageteams bauen Anlage und Speicher sauber und termintreu auf.</p>
+          </li>
+          <li class="step" data-reveal style="--d:300ms">
+            <span class="step__num">04</span>
+            <h3>Inbetriebnahme &amp; Wartung</h3>
+            <p>Wir nehmen alles in Betrieb, melden es an und bleiben auch danach für Sie da.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ Über uns + Team ============ -->
+    <section class="section" id="ueber-uns" aria-labelledby="about-title">
+      <div class="container">
+        <div class="about">
+          <header class="section-head" data-reveal>
+            <p class="eyebrow">Über uns</p>
+            <h2 class="h2" id="about-title">Aus Hamburg.<br><span class="grad-text">Für den Norden.</span></h2>
+          </header>
+          <div class="about__text" data-reveal style="--d:120ms">
+            <p class="lead lead--light">Nordlicht plant, baut und wartet Solaranlagen und Batteriespeicher. Seit 2014 haben wir über 2.300 Anlagen in Norddeutschland installiert. Unser Ziel: Strom vom eigenen Dach, einfach und bezahlbar.</p>
+            <dl class="facts">
+              <div><dt>Gegründet</dt><dd>2014 in Hamburg</dd></div>
+              <div><dt>Mitarbeitende</dt><dd>48</dd></div>
+              <div><dt>Geschäftsführung</dt><dd>Jonas Behrend (Gründer, CEO)<br>Dr. Mira Kessler (Technik)</dd></div>
+            </dl>
+          </div>
+        </div>
+
+        <h3 class="h3" id="team" data-reveal>Das Team <span class="muted">(Auswahl)</span></h3>
+        <ul class="team">
+          <li class="person" data-reveal>
+            <span class="avatar" style="--a:#3cf2b0;--b:#33c7ff" aria-hidden="true">JB</span>
+            <h4>Jonas Behrend</h4><p>Geschäftsführer</p>
+          </li>
+          <li class="person" data-reveal style="--d:80ms">
+            <span class="avatar" style="--a:#33c7ff;--b:#8f7bff" aria-hidden="true">MK</span>
+            <h4>Dr. Mira Kessler</h4><p>Leiterin Technik</p>
+          </li>
+          <li class="person" data-reveal style="--d:160ms">
+            <span class="avatar" style="--a:#8f7bff;--b:#ff7ac6" aria-hidden="true">LH</span>
+            <h4>Lena Hoffmann</h4><p>Kundenberatung</p>
+          </li>
+          <li class="person" data-reveal style="--d:240ms">
+            <span class="avatar" style="--a:#ffc24b;--b:#3cf2b0" aria-hidden="true">TA</span>
+            <h4>Tim Albrecht</h4><p>Montageleitung</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ Kundenstimmen ============ -->
+    <section class="section section--quotes" id="stimmen" aria-labelledby="quotes-title">
+      <div class="container">
+        <header class="section-head section-head--center" data-reveal>
+          <p class="eyebrow">Kundenstimmen</p>
+          <h2 class="h2" id="quotes-title">Was unsere Kunden sagen.</h2>
+        </header>
+        <div class="quotes">
+          <figure class="quote" data-reveal>
+            <blockquote><p>„Vom Angebot bis zur Inbetriebnahme in sechs Wochen, sehr professionell.“</p></blockquote>
+            <figcaption><strong>Familie Wagner</strong><span>Pinneberg</span></figcaption>
+          </figure>
+          <figure class="quote" data-reveal style="--d:150ms">
+            <blockquote><p>„Unser Stromverbrauch aus dem Netz ist um <span class="grad-text">70&nbsp;%</span> gesunken.“</p></blockquote>
+            <figcaption><strong>Bäckerei Thomsen</strong><span>Lübeck</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Kontakt ============ -->
+    <section class="section section--contact" id="kontakt" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="contact">
+          <div class="contact__info" data-reveal>
+            <p class="eyebrow">Kontakt</p>
+            <h2 class="h2" id="contact-title">Lassen Sie uns<br><span class="grad-text">sprechen.</span></h2>
+            <p class="lead">Kostenlos und unverbindlich. Wir melden uns innerhalb eines Werktags.</p>
+
+            <ul class="contact__list">
+              <li>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+                <address>Musterstraße 14<br>20457 Hamburg</address>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+                <a href="tel:+493023125410">030 23125 410</a>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 6l8.5 7 8.5-7" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+                <a href="mailto:kontakt@nordlicht-energie.example">kontakt@nordlicht-energie.example</a>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                <span>Mo–Fr 8–17 Uhr <span class="open-state" id="open-state"></span></span>
+              </li>
+            </ul>
+          </div>
+
+          <form class="form" id="contact-form" data-reveal style="--d:120ms" novalidate>
+            <div class="form__row">
+              <div class="input">
+                <input id="f-name" name="name" type="text" autocomplete="name" required placeholder=" ">
+                <label for="f-name">Name</label>
+              </div>
+              <div class="input">
+                <input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder=" ">
+                <label for="f-phone">Telefon (optional)</label>
+              </div>
+            </div>
+            <div class="input">
+              <input id="f-email" name="email" type="email" autocomplete="email" required placeholder=" ">
+              <label for="f-email">E-Mail</label>
+            </div>
+            <div class="seg seg--form" role="radiogroup" aria-label="Anfrage für">
+              <label><input type="radio" name="type" value="Privat" checked><span>Privat</span></label>
+              <label><input type="radio" name="type" value="Gewerbe"><span>Gewerbe</span></label>
+            </div>
+            <div class="input">
+              <textarea id="f-msg" name="message" rows="4" placeholder=" "></textarea>
+              <label for="f-msg">Ihre Nachricht</label>
+            </div>
+            <label class="check">
+              <input type="checkbox" id="f-consent" required>
+              <span>Ich bin einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage verwendet werden. Mehr in der <a href="datenschutz.html">Datenschutzerklärung</a>.</span>
+            </label>
+            <button class="btn btn--block" type="submit">Anfrage senden</button>
+            <p class="form__note" id="form-note" role="status">Das Formular öffnet Ihr E-Mail-Programm mit einer vorbereiteten Nachricht.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ Footer ============ -->
+  <footer class="footer">
+    <div class="container">
+      <ol class="footnotes">
+        <li id="fn-1">Unverbindliche Schätzung auf Basis typischer Annahmen für Norddeutschland: 920 kWh Jahresertrag je kWp, Eigenverbrauch ca. 30 % ohne bzw. ca. 65 % mit Speicher (Gewerbe: 55 % bzw. 75 %), Einspeisevergütung 7 ct/kWh, 0,38 kg CO₂ je kWh. Ersetzt keine individuelle Planung.</li>
+        <li id="fn-2">Modellhafte Simulation eines sonnigen Sommertags mit einer 10-kWp-Anlage und einem 10-kWh-Speicher. Reale Werte hängen von Wetter, Dach und Verbrauch ab.</li>
+        <li id="fn-3">Die Garantie bezieht sich auf die Montageleistung. Für Komponenten gelten die jeweiligen Herstellergarantien.</li>
+        <li id="fn-4">Angabe des Unternehmens.</li>
+      </ol>
+      <div class="footer__grid">
+        <div>
+          <h3>Nordlicht</h3>
+          <ul><li><a href="#loesungen">Lösungen</a></li><li><a href="#tagesverlauf">Technik</a></li><li><a href="#rechner">Rechner</a></li><li><a href="#ablauf">Ablauf</a></li></ul>
+        </div>
+        <div>
+          <h3>Unternehmen</h3>
+          <ul><li><a href="#ueber-uns">Über uns</a></li><li><a href="#team">Team</a></li><li><a href="#stimmen">Kundenstimmen</a></li></ul>
+        </div>
+        <div>
+          <h3>Kontakt</h3>
+          <ul><li>Musterstraße 14, 20457 Hamburg</li><li><a href="tel:+493023125410">030 23125 410</a></li><li><a href="mailto:kontakt@nordlicht-energie.example">kontakt@nordlicht-energie.example</a></li><li>Mo–Fr 8–17 Uhr</li></ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>Copyright © <span id="year">2026</span> Nordlicht Energietechnik GmbH. Alle Rechte vorbehalten.</p>
+        <ul><li><a href="impressum.html">Impressum</a></li><li><a href="datenschutz.html">Datenschutz</a></li></ul>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
