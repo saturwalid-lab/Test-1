@@ -22,3 +22,7 @@ python3 -m http.server 8000
 ```
 
 Hinweis: Impressum und Datenschutz enthalten Platzhalter (fiktive Angaben) und müssen vor einer Veröffentlichung angepasst werden.
+
+## Wild – Travel-Hero (Demo)
+
+`wild/index.html` ist ein eigenständiger One-Screen-Hero für die fiktive Marke „Wild“ (HTML/CSS/Vanilla-JS, Inter selbst gehostet unter `wild/fonts/`). `?rec=1` aktiviert den Aufnahmemodus.
