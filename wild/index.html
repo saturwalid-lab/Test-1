@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wild — Travel Rentals</title>
+<meta name="description" content="Wild is a fictional travel rental brand. Embark on a wild ride around the world.">
+<link rel="preload" href="fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{
+  font-family:"Inter";
+  src:url("fonts/inter-var.woff2") format("woff2");
+  font-weight:100 900;
+  font-style:normal;
+  font-display:block;
+}
+:root{
+  --fs:min(19.6vh,13.2vw);
+  --page:#ffffff;
+  --paper:#f2f2f1;
+  --ink:#1d1d1d;
+  --ink-2:#3a3a3a;
+  --rule:#a9a9a6;
+  --btn:#1b1b1b;
+  --fill:#d8d3cf;
+  --hair:#b9b9b9;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  background:var(--page);
+  color:var(--ink);
+  font-family:"Inter",system-ui,sans-serif;
+  overflow:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+
+/* ---------- background ---------- */
+.bg{position:fixed;inset:0;background:var(--paper);opacity:0;pointer-events:none}
+.bg svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+
+/* ---------- nav ---------- */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:3;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:calc(var(--fs)*.14) calc(var(--fs)*.27) 0;
+  font-size:max(12px,calc(var(--fs)*.072));
+  font-weight:450;letter-spacing:-.005em;
+  transform:translateY(-140%);
+}
+.nav ul{display:flex;gap:2.1em;list-style:none}
+.nav a{transition:opacity .2s}
+.nav a:hover{opacity:.55}
+
+/* ---------- hero ---------- */
+.hero{
+  position:fixed;left:0;right:0;top:43%;
+  transform:translateY(-50%);
+  display:flex;justify-content:center;align-items:center;
+  gap:.026em;
+  font-size:var(--fs);
+  font-weight:800;letter-spacing:-.045em;line-height:.8;
+  white-space:nowrap;user-select:none;
+  visibility:hidden;
+}
+.ready .hero{visibility:visible}
+.hero .half{display:block;font:inherit;letter-spacing:inherit}
+.hero .wi{padding-right:.01em}
+.hero .ld{margin-left:-.01em}
+
+.pill{
+  position:relative;flex:none;
+  width:.012em;height:1.81em;
+  border-radius:999px;overflow:hidden;
+  background:var(--fill);
+  clip-path:inset(50% 0 50% 0);
+  isolation:isolate;
+}
+.pill video{
+  position:absolute;top:0;left:50%;
+  height:100%;width:max(4.2em,100%);
+  transform:translateX(-50%);
+  object-fit:cover;object-position:center top;
+  opacity:1;display:block;
+}
+.pill .hair{position:absolute;inset:0;background:var(--hair);opacity:1;z-index:1}
+.pill .icons{position:absolute;inset:0;z-index:2;opacity:0;pointer-events:none}
+.pill .ico{
+  position:absolute;top:50%;
+  width:.13em;height:.13em;
+  transform:translateY(-50%);
+  color:#fff;opacity:.85;pointer-events:auto;
+  display:grid;place-items:center;
+}
+.pill .ico svg{width:100%;height:100%;display:block;overflow:visible}
+.pill .ico.l{left:.2em}
+.pill .ico.r{right:.2em}
+.pill .ico .waves{transition:opacity .25s}
+.pill .ico[aria-pressed="false"] .waves{opacity:0}
+.pill .ico[aria-pressed="false"] .mute{opacity:1}
+.pill .ico .mute{opacity:0;transition:opacity .25s}
+
+/* ---------- footer ---------- */
+.foot{
+  position:fixed;left:0;right:0;bottom:0;z-index:3;
+  display:flex;align-items:flex-end;
+  gap:calc(var(--fs)*.16);
+  padding:0 calc(var(--fs)*.27) calc(var(--fs)*.16);
+  transform:translateY(160%);
+}
+.foot p{
+  flex:none;
+  width:calc(var(--fs)*1.42);
+  font-size:max(11px,calc(var(--fs)*.066));
+  line-height:1.45;color:var(--ink-2);font-weight:420;
+}
+.foot p .cap{
+  float:left;font-size:2.35em;font-weight:650;color:var(--ink);
+  line-height:.82;margin:.04em .08em 0 0;letter-spacing:-.02em;
+}
+.foot .end{flex:1;display:flex;align-items:center;gap:calc(var(--fs)*.16)}
+.foot .rule{flex:1;height:1px;background:var(--rule);transform:scaleX(0);transform-origin:50% 50%}
+.cta{
+  flex:none;
+  background:var(--btn);color:#fff;
+  font-size:max(12.5px,calc(var(--fs)*.072));font-weight:550;letter-spacing:-.005em;
+  padding:1.05em 1.9em;border-radius:999px;
+  transition:transform .2s ease,background .2s;
+}
+.cta:hover{background:#000;transform:translateY(-1px)}
+.cta:focus-visible,.ico:focus-visible,.nav a:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+
+/* ---------- phone ---------- */
+@media (max-width:720px){
+  :root{--fs:min(34vw,16.5vh)}
+  .nav{padding:18px 20px 0;font-size:12.5px}
+  .nav ul{gap:1.4em}
+  .nav .social{display:none}
+  .hero{
+    top:47%;flex-direction:column;gap:.03em;
+  }
+  .hero .wi,.hero .ld{padding:0;margin:0}
+  .pill{
+    width:calc(100vw - 40px);height:1.5px;
+    border-radius:calc((100vw - 40px) / 1.85 / 2);
+    clip-path:inset(0 50% 0 50%);
+  }
+  .pill video{
+    top:50%;left:0;width:100%;
+    height:calc((100vw - 40px) / 1.85);
+    transform:translateY(-50%);
+  }
+  .pill .ico{width:20px;height:20px}
+  .pill .ico.l{left:22px}
+  .pill .ico.r{right:22px}
+  .foot{flex-direction:column;align-items:stretch;gap:14px;padding:0 20px 20px}
+  .foot p{width:100%;font-size:13px;line-height:1.5}
+  .foot .end{gap:20px}
+  .cta{height:38px;padding:0 18px;font-size:13px;display:flex;align-items:center}
+}
+</style>
+</head>
+<body>
+
+<div class="bg" aria-hidden="true">
+  <svg id="lines" viewBox="0 0 1600 1000" preserveAspectRatio="none"></svg>
+</div>
+
+<nav class="nav" aria-label="Main">
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Features</a></li>
+    <li><a href="#">Templates</a></li>
+    <li><a href="#">Contact Us</a></li>
+  </ul>
+  <ul class="social">
+    <li><a href="#">Instagram</a></li>
+    <li><a href="#">Facebook</a></li>
+  </ul>
+</nav>
+
+<main class="hero" aria-label="Wild">
+  <h1 class="half wi" aria-label="Wild">WI</h1>
+  <div class="pill" id="pill">
+    <video id="vid" muted loop playsinline preload="auto"
+      poster="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/726b168c-da47-4682-a255-cc3e02f89bae.jpg"
+      src="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/175fbbcd-e50a-480c-bab2-ca16d4678322.mp4"
+      aria-label="A floating island with a waterfall above sunset clouds"></video>
+    <div class="hair" id="hair"></div>
+    <div class="icons" id="icons">
+      <span class="ico l" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 9h11a3 3 0 1 0-3-3"/>
+          <path d="M3 13h15a3 3 0 1 1-3 3"/>
+          <path d="M3 17h6"/>
+        </svg>
+      </span>
+      <button class="ico r" id="sound" type="button" aria-pressed="true" aria-label="Toggle sound waves">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 9.5h3.2L12 5.5v13l-4.8-4H4z"/>
+          <g class="waves"><path d="M15.5 9.2a4 4 0 0 1 0 5.6"/><path d="M18.3 6.6a7.6 7.6 0 0 1 0 10.8"/></g>
+          <g class="mute"><path d="M16 10l4 4M20 10l-4 4"/></g>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <span class="half ld" aria-hidden="true">LD</span>
+</main>
+
+<footer class="foot">
+  <p><span class="cap">E</span>mbark on a wild ride around the world with our travel rental service. Discover breathtaking landscapes and hidden gems on your unforgettable journey.</p>
+  <div class="end">
+    <span class="rule" id="rule"></span>
+    <button class="cta" id="cta" type="button">Let’s Get Wild</button>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const D = 2100;
+  const $ = s => document.querySelector(s);
+  const hero = $('.hero'), pill = $('#pill'), hair = $('#hair'), icons = $('#icons');
+  const bg = $('.bg'), nav = $('.nav'), foot = $('.foot'), rule = $('#rule');
+  const vid = $('#vid'), sound = $('#sound'), cta = $('#cta');
+  const params = new URLSearchParams(location.search);
+  const REC = params.get('rec') === '1';
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const phoneMQ = matchMedia('(max-width: 720px)');
+
+  /* ---------- background strokes ---------- */
+  (function drawLines(){
+    const svg = $('#lines'), NS = 'http://www.w3.org/2000/svg';
+    for (let i = 0; i < 15; i++) {
+      const o = i * 112 - 420;
+      const w = Math.sin(i * 1.7) * 60;
+      const d = `M ${o - 260} 1060 C ${o + 220} ${900 + w}, ${o + 90} ${640 - w}, ${o + 560} ${520 + w * .6}`
+              + ` S ${o + 1080} ${330 - w}, ${o + 1780} ${-80 + w * .5}`;
+      const p = document.createElementNS(NS, 'path');
+      p.setAttribute('d', d);
+      p.setAttribute('fill', 'none');
+      p.setAttribute('stroke', '#fff');
+      p.setAttribute('stroke-linecap', 'round');
+      p.setAttribute('vector-effect', 'non-scaling-stroke');
+      p.setAttribute('stroke-width', (1.2 + ((i * 7) % 10) / 9 * 2.7).toFixed(2));
+      p.setAttribute('stroke-opacity', (.55 + ((i * 5) % 7) / 6 * .3).toFixed(2));
+      svg.appendChild(p);
+    }
+  })();
+
+  /* ---------- timeline ---------- */
+  const E1 = 'cubic-bezier(.5,0,.3,1)', E2 = 'cubic-bezier(.45,0,.3,1)', E3 = 'cubic-bezier(.4,0,.2,1)';
+  const EO = 'cubic-bezier(.2,.8,.2,1)';
+  let anims = [], gen = 0, busy = false;
+
+  function build(){
+    anims.forEach(a => a.cancel());
+    anims = []; gen++; busy = false;
+    const phone = phoneMQ.matches;
+    const add = (el, kf) => { const a = el.animate(kf, { duration: D, fill: 'both' }); a.pause(); anims.push(a); };
+
+    if (!phone) {
+      add(pill, [
+        { width: '.012em', offset: 0 },
+        { width: '.012em', offset: .14, easing: E1 },
+        { width: '.16em',  offset: .30, easing: E2 },
+        { width: '1.81em', offset: .58, easing: E3 },
+        { width: '3.62em', offset: 1 }
+      ]);
+      add(pill, [
+        { clipPath: 'inset(50% 0% 50% 0%)', offset: 0, easing: E1 },
+        { clipPath: 'inset(0% 0% 0% 0%)', offset: .14 },
+        { clipPath: 'inset(0% 0% 0% 0%)', offset: 1 }
+      ]);
+      add(hero, [
+        { gap: '.026em', offset: 0 },
+        { gap: '.026em', offset: .14, easing: E2 },
+        { gap: '.05em',  offset: .58, easing: E3 },
+        { gap: '.085em', offset: 1 }
+      ]);
+    } else {
+      const H = (innerWidth - 40) / 1.85;
+      add(pill, [
+        { height: '1.5px', offset: 0 },
+        { height: '1.5px', offset: .14, easing: E1 },
+        { height: (H * .10) + 'px', offset: .30, easing: E2 },
+        { height: (H * .55) + 'px', offset: .58, easing: E3 },
+        { height: H + 'px', offset: 1 }
+      ]);
+      add(pill, [
+        { clipPath: 'inset(0% 50% 0% 50%)', offset: 0, easing: E1 },
+        { clipPath: 'inset(0% 0% 0% 0%)', offset: .14 },
+        { clipPath: 'inset(0% 0% 0% 0%)', offset: 1 }
+      ]);
+      add(hero, [
+        { gap: '.03em', offset: 0 },
+        { gap: '.03em', offset: .14, easing: E2 },
+        { gap: '.1em', offset: 1 }
+      ]);
+    }
+    add(hair, [
+      { opacity: 1, offset: 0 }, { opacity: 1, offset: .14, easing: 'ease-out' },
+      { opacity: 0, offset: .30 }, { opacity: 0, offset: 1 }
+    ]);
+    add(bg, [
+      { opacity: 0, offset: 0 }, { opacity: 0, offset: .45, easing: 'ease-in-out' },
+      { opacity: 1, offset: .78 }, { opacity: 1, offset: 1 }
+    ]);
+    add(nav, [
+      { transform: 'translateY(-140%)', offset: 0 }, { transform: 'translateY(-140%)', offset: .50, easing: EO },
+      { transform: 'translateY(0)', offset: .86 }, { transform: 'translateY(0)', offset: 1 }
+    ]);
+    add(foot, [
+      { transform: 'translateY(160%)', offset: 0 }, { transform: 'translateY(160%)', offset: .52, easing: EO },
+      { transform: 'translateY(0)', offset: .90 }, { transform: 'translateY(0)', offset: 1 }
+    ]);
+    add(rule, [
+      { transform: 'scaleX(0)', offset: 0 }, { transform: 'scaleX(0)', offset: .40, easing: E3 },
+      { transform: 'scaleX(1)', offset: .95 }, { transform: 'scaleX(1)', offset: 1 }
+    ]);
+    add(icons, [
+      { opacity: 0, offset: 0 }, { opacity: 0, offset: .80, easing: 'ease-out' },
+      { opacity: 1, offset: 1 }
+    ]);
+  }
+
+  const allDone = () => Promise.all(anims.map(a => a.finished));
+  function forward(){ anims.forEach(a => { a.playbackRate = 1; a.play(); }); return allDone(); }
+  function backward(){ anims.forEach(a => { a.playbackRate = -1; a.play(); }); return allDone(); }
+  function toEnd(){ anims.forEach(a => a.finish()); }
+
+  function replay(){
+    if (busy || reduced) return;
+    busy = true;
+    const g = gen;
+    backward()
+      .then(() => { if (g === gen) return forward(); })
+      .then(() => { if (g === gen) busy = false; })
+      .catch(() => {});
+  }
+
+  /* ---------- video ---------- */
+  function playVideo(){ if (reduced) return; const p = vid.play(); if (p) p.catch(() => {}); }
+  vid.addEventListener('loadeddata', playVideo);
+
+  window.__recVideo = t => {
+    const dur = (isFinite(vid.duration) && vid.duration > 0) ? vid.duration : 4.25;
+    return (t % dur) + 1 / 120;
+  };
+
+  /* ---------- interaction ---------- */
+  cta.addEventListener('click', replay);
+  sound.addEventListener('click', () => {
+    sound.setAttribute('aria-pressed', sound.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
+  });
+
+  let rz;
+  addEventListener('resize', () => {
+    cancelAnimationFrame(rz);
+    rz = requestAnimationFrame(() => { build(); toEnd(); });
+  });
+
+  /* ---------- start ---------- */
+  build();
+  const fontsReady = document.fonts
+    ? document.fonts.load('800 100px Inter').then(() => document.fonts.ready).catch(() => {})
+    : Promise.resolve();
+
+  fontsReady.then(() => {
+    document.documentElement.classList.add('ready');
+    if (reduced) { toEnd(); vid.pause(); return; }
+    playVideo();
+    busy = true;
+    const g = gen;
+    forward().then(() => { if (g === gen) busy = false; }).catch(() => {});
+    if (REC) {
+      setTimeout(() => { if (g === gen) { busy = true; backward().catch(() => {}); } }, 4900);
+    }
+  });
+})();
+</script>
+</body>
+</html>
